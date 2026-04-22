@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bubblegum: #FF4FB8;
+  --color-candy-cyan: #3DD9FF;
+  --color-mint: #6BE3C9;
+  --color-candy-yellow: #FFE156;
+  --color-grape: #B07BFF;
+  --color-berry: #2B0F3E;
+  --color-pink-wash: #FFF0F8;
+}
+
+html, body {
+  background: var(--color-pink-wash);
+  color: var(--color-berry);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
