@@ -46,9 +46,14 @@ export function WaitlistForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="rounded-full bg-gradient-to-r from-bubblegum to-grape px-6 py-3 font-bold text-white shadow-lg shadow-bubblegum/30 transition hover:scale-105 disabled:opacity-60"
+        className="group relative overflow-hidden rounded-full bg-gradient-to-br from-bubblegum to-grape px-7 py-3 font-extrabold text-white shadow-xl shadow-bubblegum/40 transition-transform duration-200 ease-out hover:scale-[1.04] active:scale-[0.96] disabled:opacity-60"
       >
-        {status === 'loading' ? '…' : 'Join waitlist'}
+        {/* gumball top shine */}
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-full bg-gradient-to-b from-white/50 to-transparent"
+        />
+        <span className="relative">{status === 'loading' ? '…' : 'Join waitlist'}</span>
       </button>
     </form>
   );

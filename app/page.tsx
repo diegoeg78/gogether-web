@@ -48,8 +48,13 @@ export default function Home() {
             ].map((step, i) => (
               <div
                 key={i}
-                className="rounded-3xl border-2 border-bubblegum/10 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                className="relative overflow-hidden rounded-3xl border-2 border-bubblegum/10 bg-white p-6 shadow-sm transition duration-200 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl hover:shadow-bubblegum/10 active:scale-[0.98]"
               >
+                {/* gumball sheen */}
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-x-0 top-0 h-1/3 rounded-t-3xl bg-gradient-to-b from-bubblegum/5 to-transparent"
+                />
                 <div className="text-4xl">{step.emoji}</div>
                 <div className="mt-4 text-lg font-bold">{step.title}</div>
                 <p className="mt-2 text-sm text-berry/60">{step.body}</p>
@@ -61,7 +66,11 @@ export default function Home() {
 
       {/* Trust strip */}
       <section className="px-6 py-16">
-        <div className="mx-auto max-w-4xl rounded-3xl bg-gradient-to-br from-bubblegum to-grape p-10 text-center text-white shadow-xl sm:p-14">
+        <div className="relative mx-auto max-w-4xl overflow-hidden rounded-3xl bg-gradient-to-br from-bubblegum to-grape p-10 text-center text-white shadow-2xl shadow-bubblegum/30 sm:p-14">
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-x-0 top-0 h-2/5 bg-gradient-to-b from-white/25 to-transparent"
+          />
           <div className="text-4xl">🤝</div>
           <h3 className="mt-4 text-2xl font-black sm:text-3xl">
             No trip = no charge. Ever.
