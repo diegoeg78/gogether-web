@@ -3,8 +3,8 @@ import { WaitlistForm } from './waitlist-form';
 const features = [
   {
     emoji: '💰',
-    title: 'Pick your contribution',
-    body: 'Daily, weekly, monthly, or one-time. Even split, what-you-can, or let AI suggest based on trip cost and crew size.',
+    title: 'Real deposits, your pace',
+    body: 'Daily, weekly, monthly — auto-pulled from your bank into an FDIC-insured trip fund. No lump-sum shock when it\u2019s time to book.',
   },
   {
     emoji: '🤖',
@@ -50,31 +50,39 @@ const features = [
 
 const steps = [
   { num: '01', emoji: '👯', title: 'Form a crew', body: 'Create a group, give it an emoji and a goal, share a one-tap invite link.' },
-  { num: '02', emoji: '🏦', title: 'Save together', body: 'Each member sets their own cadence. Fund grows as a virtual balance — no custody, no escrow.' },
+  { num: '02', emoji: '🏦', title: 'Save together', body: 'Each member picks their cadence. Real deposits auto-pull into your own FDIC-insured trip fund. Balance is yours, refundable anytime.' },
   { num: '03', emoji: '🧠', title: 'AI picks trips', body: 'When you\u2019re ready, the planner pitches three options that fit the fund and the vibe.' },
   { num: '04', emoji: '💳', title: 'Book when ready', body: 'Vote, lock in, each card is charged its share once. Hand off to the booking site you already trust.' },
 ];
 
 const faqs = [
   {
-    q: 'Do you hold our money?',
-    a: "No. Stay2gether is a ledger — we track what each person has pledged, but the cash stays on your card until the crew locks in a trip. At book time, each member\u2019s card is charged their share, once.",
+    q: 'Where does my money actually go?',
+    a: "Each member gets their own FDIC-insured trip fund held at our sponsor bank (Evolve Bank & Trust). Weekly deposits auto-pull from your checking into that fund. You can see the balance grow in real time, and withdraw to your bank anytime.",
+  },
+  {
+    q: 'Is my card / bank charged every week?',
+    a: 'Yes — real deposits. That\u2019s the whole point. If the crew deposits weekly, you actually build a balance. When the trip locks in, your share is moved from your fund to the booking. No lump-sum surprise.',
+  },
+  {
+    q: 'What if I back out or the trip gets cancelled?',
+    a: 'Full refund, no fees. Hit "back out" in the app and your balance wires back to your bank in 3–5 business days. Your money is yours until the moment the crew books.',
   },
   {
     q: 'What if someone flakes?',
-    a: 'Their share doesn\u2019t get charged, and the group sees it instantly. You can cover them (gift a payment), split the shortfall across the crew, or cancel. No drama, no chasing Venmos.',
+    a: 'Their balance is their own — they can withdraw it and leave the crew. The rest of the crew sees the shortfall instantly and can cover it, gift a payment, or cancel the trip. No drama, no chasing Venmos.',
+  },
+  {
+    q: 'Do you hold the money?',
+    a: "No — we don\u2019t custody funds. A regulated FDIC-insured bank does, under your name. We\u2019re the app that makes saving as a crew feel like one thing instead of ten Venmo threads.",
   },
   {
     q: 'Where does the booking happen?',
     a: 'Wherever you want. We hand you off to Expedia, Booking.com, Kayak, Skyscanner — whichever deal is best the day you book. We just make sure the crew has the money ready.',
   },
   {
-    q: 'Is my card charged every week?',
-    a: "Only at booking. Scheduled contributions are virtual — they build a pledge balance. You\u2019re charged once, for your share, when the crew locks in a trip.",
-  },
-  {
     q: 'How does the AI know what we want?',
-    a: "A 2-minute group interview: dream vibe, travel window, hard-nos, budget ceiling. Claude then picks three trips that match the crew\u2019s answers and current fund balance.",
+    a: "A 2-minute group interview: dream vibe, travel window, hard-nos, budget ceiling. Claude picks three trips that match the crew\u2019s answers and current fund balance.",
   },
 ];
 
@@ -126,8 +134,8 @@ export default function Home() {
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-base text-ink-muted sm:text-lg">
-            A group savings club for travel. Schedule contributions, watch the fund grow,
-            and see exactly which trips your crew can afford right now.
+            A group savings club for travel. Real weekly deposits into an FDIC-insured
+            trip fund — watch it grow, refund anytime, book what the crew can actually afford.
           </p>
           <div id="waitlist" className="mt-10">
             <WaitlistForm />
@@ -140,10 +148,10 @@ export default function Home() {
       <section className="border-y border-border/60 bg-surface/40 px-6 py-10">
         <div className="mx-auto grid max-w-5xl grid-cols-2 gap-6 text-center sm:grid-cols-4">
           {[
+            { n: 'FDIC', l: 'insured to $250K' },
+            { n: '3–5 days', l: 'refund to bank' },
+            { n: '$0', l: 'fees or penalties' },
             { n: '2 min', l: 'to plan a trip' },
-            { n: '$0', l: 'held in custody' },
-            { n: '1', l: 'charge per member' },
-            { n: '∞', l: 'crews per account' },
           ].map((s) => (
             <div key={s.l}>
               <div className="text-3xl font-black text-lime sm:text-4xl">{s.n}</div>
@@ -325,11 +333,12 @@ export default function Home() {
           />
           <div className="relative text-4xl">💸</div>
           <h3 className="relative mt-4 text-2xl font-black sm:text-3xl">
-            Your money. Your fund. Your call.
+            Real savings. FDIC-insured. Refundable.
           </h3>
           <p className="relative mx-auto mt-3 max-w-xl text-ink-muted">
-            Stay2gether is a savings club — we don&apos;t process bookings and we never hold your cash.
-            Your card stays with you until the crew locks in a trip. One charge, one trip, done.
+            Each member&apos;s trip fund lives at a regulated sponsor bank (Evolve Bank &amp; Trust),
+            FDIC-insured to $250K. We don&apos;t hold your money — the bank does, in your name.
+            Back out anytime for a full refund in 3–5 business days.
           </p>
         </div>
       </section>
