@@ -2,9 +2,9 @@ import { WaitlistForm } from './waitlist-form';
 
 const features = [
   {
-    emoji: '💰',
-    title: 'Pledge your pace',
-    body: 'Daily, weekly, monthly. We remind you, you pay your crew however you already do (Venmo, Zelle, cash). Tap to log it, crew sees it instantly.',
+    emoji: '💵',
+    title: 'One Cash App Pool per crew',
+    body: 'Link your Cash App Pool and the crew contributes in one place. Cash App holds the money under their charter — we just track who\u2019s paid.',
   },
   {
     emoji: '🤖',
@@ -62,7 +62,7 @@ const faqs = [
   },
   {
     q: 'How does it actually work?',
-    a: 'Each member sets a pledge (say, $50/week). On the due date we send a reminder. You send the money to the crew organizer (or whoever holds the pool) via your usual app, then tap "I paid" in Stay2gether. The crew pool updates instantly and everyone sees who\u2019s caught up.',
+    a: 'One person creates a Cash App Pool for the crew ("Tulum Crew") and pastes the link into Stay2gether. Each member sets a pledge ($50/week, whatever). On the due date we send a reminder, you tap "Contribute via Cash App" → money goes straight into the pool. Tap "I paid" and the crew feed updates instantly. Venmo or Zelle works too — the app is flexible.',
   },
   {
     q: 'What if someone flakes?',
