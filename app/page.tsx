@@ -3,8 +3,8 @@ import { WaitlistForm } from './waitlist-form';
 const features = [
   {
     emoji: '💰',
-    title: 'Real deposits, your pace',
-    body: 'Daily, weekly, monthly — auto-pulled from your bank into an FDIC-insured trip fund. No lump-sum shock when it\u2019s time to book.',
+    title: 'Pledge your pace',
+    body: 'Daily, weekly, monthly. We remind you, you pay your crew however you already do (Venmo, Zelle, cash). Tap to log it, crew sees it instantly.',
   },
   {
     emoji: '🤖',
@@ -50,39 +50,35 @@ const features = [
 
 const steps = [
   { num: '01', emoji: '👯', title: 'Form a crew', body: 'Create a group, give it an emoji and a goal, share a one-tap invite link.' },
-  { num: '02', emoji: '🏦', title: 'Save together', body: 'Each member picks their cadence. Real deposits auto-pull into your own FDIC-insured trip fund. Balance is yours, refundable anytime.' },
+  { num: '02', emoji: '🤝', title: 'Pay + log', body: 'Each member pledges a pace. We remind you, you send via Venmo/Zelle/cash, tap to log. Crew pool grows in real time.' },
   { num: '03', emoji: '🧠', title: 'AI picks trips', body: 'When you\u2019re ready, the planner pitches three options that fit the fund and the vibe.' },
-  { num: '04', emoji: '💳', title: 'Book when ready', body: 'Vote, lock in, each card is charged its share once. Hand off to the booking site you already trust.' },
+  { num: '04', emoji: '✈️', title: 'Book when ready', body: 'Once the pool hits the goal, the crew hands off to Expedia, Booking, or Kayak. You book, you fly, you post the photos.' },
 ];
 
 const faqs = [
   {
-    q: 'Where does my money actually go?',
-    a: "Each member gets their own FDIC-insured trip fund held at our sponsor bank (Evolve Bank & Trust). Weekly deposits auto-pull from your checking into that fund. You can see the balance grow in real time, and withdraw to your bank anytime.",
+    q: 'Do you hold our money?',
+    a: "No. Stay2gether never touches a cent. You pay each other how you already do \u2014 Venmo, Zelle, cash. We\u2019re the scoreboard.",
   },
   {
-    q: 'Is my card / bank charged every week?',
-    a: 'Yes — real deposits. That\u2019s the whole point. If the crew deposits weekly, you actually build a balance. When the trip locks in, your share is moved from your fund to the booking. No lump-sum surprise.',
-  },
-  {
-    q: 'What if I back out or the trip gets cancelled?',
-    a: 'Full refund, no fees. Hit "back out" in the app and your balance wires back to your bank in 3–5 business days. Your money is yours until the moment the crew books.',
+    q: 'How does it actually work?',
+    a: 'Each member sets a pledge (say, $50/week). On the due date we send a reminder. You send the money to the crew organizer (or whoever holds the pool) via your usual app, then tap "I paid" in Stay2gether. The crew pool updates instantly and everyone sees who\u2019s caught up.',
   },
   {
     q: 'What if someone flakes?',
-    a: 'Their balance is their own — they can withdraw it and leave the crew. The rest of the crew sees the shortfall instantly and can cover it, gift a payment, or cancel the trip. No drama, no chasing Venmos.',
+    a: 'You see it immediately \u2014 their status goes red in the crew feed. Tap "remind" or "gift a payment" to cover them. No more chasing people in group DMs.',
   },
   {
-    q: 'Do you hold the money?',
-    a: "No — we don\u2019t custody funds. A regulated FDIC-insured bank does, under your name. We\u2019re the app that makes saving as a crew feel like one thing instead of ten Venmo threads.",
+    q: 'What\u2019s different from Splitwise?',
+    a: "Splitwise tracks who owes who for a trip that already happened. Stay2gether tracks who\u2019s pulling their weight for a trip that hasn\u2019t happened yet \u2014 so the trip actually happens.",
   },
   {
     q: 'Where does the booking happen?',
-    a: 'Wherever you want. We hand you off to Expedia, Booking.com, Kayak, Skyscanner — whichever deal is best the day you book. We just make sure the crew has the money ready.',
+    a: 'Wherever you want. We hand you off to Expedia, Booking.com, Kayak, Skyscanner \u2014 whichever deal is best the day you book. We just make sure the crew has the money ready.',
   },
   {
     q: 'How does the AI know what we want?',
-    a: "A 2-minute group interview: dream vibe, travel window, hard-nos, budget ceiling. Claude picks three trips that match the crew\u2019s answers and current fund balance.",
+    a: "A 2-minute group interview: dream vibe, travel window, hard-nos, budget ceiling. Claude picks three trips that match the crew\u2019s answers and current pool size.",
   },
 ];
 
@@ -134,8 +130,9 @@ export default function Home() {
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-base text-ink-muted sm:text-lg">
-            A group savings club for travel. Real weekly deposits into an FDIC-insured
-            trip fund — watch it grow, refund anytime, book what the crew can actually afford.
+            Pool money with your crew, track who&apos;s paid, vote on where to go, and book
+            the trip you can actually afford. Pay each other however you already do — we just
+            keep score.
           </p>
           <div id="waitlist" className="mt-10">
             <WaitlistForm />
@@ -148,9 +145,9 @@ export default function Home() {
       <section className="border-y border-border/60 bg-surface/40 px-6 py-10">
         <div className="mx-auto grid max-w-5xl grid-cols-2 gap-6 text-center sm:grid-cols-4">
           {[
-            { n: 'FDIC', l: 'insured to $250K' },
-            { n: '3–5 days', l: 'refund to bank' },
-            { n: '$0', l: 'fees or penalties' },
+            { n: 'Venmo', l: 'Zelle, cash — your call' },
+            { n: '$0', l: 'held by us, ever' },
+            { n: '1', l: 'crew, one vote, one trip' },
             { n: '2 min', l: 'to plan a trip' },
           ].map((s) => (
             <div key={s.l}>
@@ -333,12 +330,12 @@ export default function Home() {
           />
           <div className="relative text-4xl">💸</div>
           <h3 className="relative mt-4 text-2xl font-black sm:text-3xl">
-            Real savings. FDIC-insured. Refundable.
+            We never touch your money.
           </h3>
           <p className="relative mx-auto mt-3 max-w-xl text-ink-muted">
-            Each member&apos;s trip fund lives at a regulated sponsor bank (Evolve Bank &amp; Trust),
-            FDIC-insured to $250K. We don&apos;t hold your money — the bank does, in your name.
-            Back out anytime for a full refund in 3–5 business days.
+            Stay2gether is a tracker, not a bank. Pay each other however you already do —
+            Venmo, Zelle, cash. We keep score, send reminders, show you what the crew can
+            afford in real time. No custody, no escrow, no fees.
           </p>
         </div>
       </section>
